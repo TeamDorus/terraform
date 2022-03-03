@@ -41,17 +41,24 @@ resource "proxmox_lxc" "lxc" {
   provisioner "remote-exec" {
     inline = ["echo Container is up-and-running!"]
     connection {
-        host = split("/", self.network[0].ip)[0]
-        type = "ssh"
-        user = "root"
-        private_key = file(var.vm_private_key_location)
-      }
+      host        = split("/", self.network[0].ip)[0]
+      type        = "ssh"
+      user        = "root"
+      private_key = file(var.vm_private_key_location)
+    }
   }
 
   // Execute ansible playbook to initialize the VM
   provisioner "local-exec" {
-    command = "ansible-playbook -K init-lxc.yml -i '${split("/", self.network[0].ip)[0]},'"
+    command     = "ansible-playbook -K init-lxc.yml -i '${split("/", self.network[0].ip)[0]},'"
     working_dir = "../../../ansible"
+  }
+
+  // @Destroy: run playbook to remove dns entry for vm that will be destroyed
+  provisioner "local-exec" {
+    command     = "ansible-playbook dns-delete-entry.yml -i '${split("/", self.network[0].ip)[0]},'"
+    working_dir = "../../../ansible"
+    when        = destroy
   }
 }
 
