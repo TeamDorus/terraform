@@ -37,6 +37,11 @@ resource "proxmox_lxc" "lxc" {
     gw     = var.vm_network_gw
   }
 
+  features {
+    nesting = var.vm_features_nesting
+    mount   = var.vm_features_mount
+  }
+
   // Wait for VM to start up before starting the ansible script
   provisioner "remote-exec" {
     inline = ["echo Container is up-and-running!"]

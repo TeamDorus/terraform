@@ -83,6 +83,14 @@ variable "vm_network_ip" {
 variable "vm_network_gw" {
   type = string
 }
+variable "vm_features_nesting" {
+  type    = bool
+  default = false
+}
+variable "vm_features_mount" {
+  type    = string
+  default = ""
+}
 variable "vm_role" {
   type = string
 }

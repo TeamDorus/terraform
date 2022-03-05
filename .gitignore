@@ -1,5 +1,5 @@
-# secrets file
-secret_vars
+# secrets files
+secret*
 
 # Local .terraform directories
 **/.terraform/*
