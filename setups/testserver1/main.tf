@@ -24,6 +24,7 @@ module "testserver1" {
   vm_network_gw           = "192.168.55.1"
 
   // Optional parameters
-  vm_memory = 1024
+  vm_memory       = 1024
+  vm_unprivileged = false
 }
 
