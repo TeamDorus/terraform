@@ -55,13 +55,13 @@ resource "proxmox_lxc" "lxc" {
 
   // Execute ansible playbook to initialize the VM
   provisioner "local-exec" {
-    command     = "ansible-playbook -K init-lxc.yml -i '${split("/", self.network[0].ip)[0]},'"
+    command     = "ansible-playbook -K lxc_init.yml -i '${split("/", self.network[0].ip)[0]},'"
     working_dir = "../../../ansible"
   }
 
-  // @Destroy: run playbook to remove dns entry for vm that will be destroyed
+  // @Destroy: run playbook to remove configs for this VM in other servers
   provisioner "local-exec" {
-    command     = "ansible-playbook dns-delete-entry.yml -i '${split("/", self.network[0].ip)[0]},'"
+    command     = "ansible-playbook lxc_destroy.yml -i '${split("/", self.network[0].ip)[0]},'"
     working_dir = "../../../ansible"
     when        = destroy
   }
