@@ -119,3 +119,10 @@ resource "netbox_primary_ip" "primary_ip" {
   ip_address_id      = netbox_ip_address.ip_addr.id
   virtual_machine_id = local.netbox_vmid
 }
+
+resource "netbox_service" "service" {
+    name               = "SSH"
+    ports              = [22]
+    protocol           = "tcp"
+    virtual_machine_id = local.netbox_vmid
+}
