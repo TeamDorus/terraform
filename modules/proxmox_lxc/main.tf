@@ -121,7 +121,7 @@ resource "netbox_primary_ip" "primary_ip" {
 }
 
 resource "netbox_service" "service" {
-    name               = "SSH"
+    name               = "ssh"
     ports              = [22]
     protocol           = "tcp"
     virtual_machine_id = local.netbox_vmid
