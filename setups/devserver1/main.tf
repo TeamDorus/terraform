@@ -22,10 +22,11 @@ module "devserver1" {
   EOT
   vm_network_ip           = "192.168.55.130/24"
   vm_network_gw           = "192.168.55.1"
-  vm_unprivileged         = false
 
   // Optional parameters
-  vm_memory      = 1024
-  vm_rootfs_size = 16
+  vm_memory           = 1024
+  vm_rootfs_size      = 16
+  vm_unprivileged     = false
+  vm_features_nesting = true
 }
 

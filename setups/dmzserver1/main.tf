@@ -12,6 +12,7 @@ module "dmzserver1" {
   netbox_api_url          = var.netbox_api_url
   netbox_api_token        = var.netbox_api_token
   vm_private_key_location = var.vm_private_key_location
+  vm_vmid                 = 666
   vm_hostname             = "dmzserver1"
   vm_role                 = "Server"
   vm_osplatform           = "Ubuntu 21.10 - impish"

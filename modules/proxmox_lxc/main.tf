@@ -16,6 +16,7 @@ locals {
 
 resource "proxmox_lxc" "lxc" {
   target_node     = var.pve_target_node
+  vmid            = var.vm_vmid
   hostname        = var.vm_hostname
   ostemplate      = var.vm_ostemplate
   ssh_public_keys = var.vm_ssh_publickey

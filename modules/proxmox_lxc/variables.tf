@@ -26,6 +26,10 @@ variable "pve_target_node" {
   type    = string
   default = "hm80"
 }
+variable "vm_vmid" {
+  type    = number
+  default = 0
+}
 variable "vm_hostname" {
   type = string
 }
