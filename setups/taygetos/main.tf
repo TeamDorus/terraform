@@ -12,7 +12,6 @@ module "taygetos" {
   netbox_api_url          = var.netbox_api_url
   netbox_api_token        = var.netbox_api_token
   vm_private_key_location = var.vm_private_key_location
-  vm_vmid                 = 666
   vm_hostname             = "taygetos"
   vm_role                 = "Server"
   vm_osplatform           = "Ubuntu 21.10 - impish"
@@ -26,6 +25,7 @@ module "taygetos" {
   vm_network_bridge       = "vmbr666"
 
   // Optional parameters
+  vm_vmid             = 666
   vm_memory           = 512
   vm_rootfs_size      = 4
   vm_unprivileged     = false
