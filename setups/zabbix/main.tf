@@ -24,9 +24,11 @@ module "zabbix" {
   vm_network_gw           = "192.168.55.1"
 
   // Optional parameters
-  vm_vmid        = 852
-  vm_cores       = 4
-  vm_memory      = 4096
-  vm_rootfs_size = 16
+  vm_vmid             = 852
+  vm_cores            = 4
+  vm_memory           = 4096
+  vm_rootfs_size      = 16
+  vm_unprivileged     = false
+  vm_features_nesting = true
 }
 
