@@ -25,6 +25,7 @@ module "netbox" {
 
   // Optional parameters
   vm_vmid             = 853
+  vm_cores            = 4
   vm_memory           = 2048
   vm_rootfs_size      = 16
   vm_unprivileged     = false
