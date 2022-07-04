@@ -20,7 +20,7 @@ module "traccar" {
   vm_ssh_publickey        = <<-EOT
   ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAptygarYRdcrn4MB+ZMR4Ukaqr7+rMYIdYRhpp+bOI4Uhffo0Y5C05QKjHsWzGlfMdzxhaXwCnBQOCugzeBuV0VcBdeqbMiD8/5FQ81LzN+7ce2Rq7cnYWigKogJB5pNwVrrHSGHzJKJLCf6aPHCtaCpJ2TLnmooziYYTL1hN5c6RDC/zjJORyB0qBgiOk5t236Zyjf0s1LdlwCrDdzUPstOXMujVGrmmzCAbTH/OCNMLh1M5IZ9X/HxMpIIpPE7Cqa8NzMUlEX4mwCFHkbkoFG+gzghABL86sp0LPtNJ59RURh2tTJUAuiqA2iLfbdBajEIfVtX30c78T5BNwVFyAQ==
   EOT
-  vm_network_ip           = "192.168.55.118/24"
+  vm_network_ip           = "192.168.55.18/24"
   vm_network_gw           = "192.168.55.1"
 
   // Optional parameters
